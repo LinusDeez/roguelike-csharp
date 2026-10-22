@@ -47,3 +47,7 @@ Roguelike.sln
 
 ## Aktueller Stand
 (Hier nach jeder Session kurz notieren, wo ich stehe, z. B. "Kapitel 3 fertig, als Nächstes Kapitel 4".)
+
+- **Kapitel 1–2 fertig.** Solution mit Core/Client/Tests auf `net10.0` (nur .NET 10 installiert). Pakete: RogueSharp 4.2 (nicht v3 wie im Tutorial), SadConsole.Host.MonoGame 10.10.1 + MonoGame.Framework.DesktopGL 3.8.4.1. Fenster 100×70, `RootScreen : ScreenObject` mit vier Consoles als Children (Inventory, Map 80×48, Messages, Stats).
+- **Als Nächstes:** Kapitel 3 (erste Map-Klasse in Core). Kartengröße kommt aus Core, der Client richtet die Map-Console danach aus. Nicht doppelt hartkodieren.
+- **Offen:** Übergangsweise `SetDefaultFontSize(IFont.Sizes.Half)`, weil 100×70 mit dem 8×16-Standardfont nicht auf den Bildschirm passt → später eine quadratische 8×8-Font einbauen.
