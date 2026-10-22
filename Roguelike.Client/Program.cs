@@ -1,20 +1,16 @@
 ﻿using SadConsole;
 using SadConsole.Configuration;
+using Roguelike.Client;
 
 Settings.WindowTitle = "Roguelike";
 
 Builder config = new Builder()
-    .SetWindowSizeInCells(80, 40)
-    .UseDefaultConsole()
-    .OnStart(Startup);
+    .SetWindowSizeInCells(100, 70)
+    .SetStartingScreen<RootScreen>()
+    .IsStartingScreenFocused(true)
+    .SetDefaultFontSize(IFont.Sizes.Half);
+
 
 Game.Create(config);
 Game.Instance.Run();
 Game.Instance.Dispose();
-
-static void Startup(object? sender, GameHost host)
-{
-    var console = Game.Instance.StartingConsole!;
-    console.Print(10, 10, "It worked!");
-}
-
